@@ -3,16 +3,15 @@
 
 
 def anagram_or_not(string_1, string_2):
-
     count = 0
+    value_1 = True
+    value_2 = True
     for character in string_1:
         if character not in string_2:
             value_1 = False
         else:
             if string_2.count(character) != string_1.count(character):
                 value_1 = False
-            else:
-                value_1 = True
 
     for character in string_2:
         if character not in string_2:
@@ -20,8 +19,6 @@ def anagram_or_not(string_1, string_2):
         else:
             if string_2.count(character) != string_1.count(character):
                 value_2 = False
-            else:
-                value_2 = True
 
     if (value_1 and value_2) == True:
         print 'Yes they are anagrams'
