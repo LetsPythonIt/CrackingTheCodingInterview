@@ -19,6 +19,8 @@ def find_length(head):
         length += 1
         temp = temp.next
     return length
+
+# Step 2::: Finding nth to the last
 def find_nth_to_last(head, n):
     temp = head
     index = 0
