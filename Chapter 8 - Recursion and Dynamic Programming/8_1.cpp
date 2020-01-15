@@ -10,23 +10,24 @@
 
 using namespace std;
 
+int Memory[100]; //  Global array
+
 int climbStairs(int N){
-	if (N==0)
-		return 0;
-	if (N==1)
-		return 1;
-	if (N==2)
-		return 2;
-	if (N==3)
-		return 3;
-	else
-		return climbStairs(N-1) + climbStairs(N-2) + climbStairs(N-3);
+	if ((N<4) and (N>-1))
+		return N;
+	if (Memory[N] != -1)
+		return Memory[N];
+	Memory[N] = climbStairs(N-1) + climbStairs(N-2) + climbStairs(N-3);
+	return Memory[N];
 }
 
 int main(){
 	
-	int n = 2;
+	int n = 46;
 	int count;
+	
+	for (int i=0; i<100; i++)
+		Memory[i] = -1;
 	
 	count = climbStairs(n);
 	
@@ -36,6 +37,5 @@ int main(){
 	
 	
 }
-
 
 
